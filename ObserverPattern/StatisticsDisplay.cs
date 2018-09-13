@@ -16,7 +16,7 @@ namespace ObserverPattern
 
         public StatisticsDisplay(WeatherData weatherData)
         {
-            this.WeatherData = weatherData;
+            WeatherData = weatherData;
             weatherData.RegisterObserver(this);
         }
 

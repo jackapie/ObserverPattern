@@ -12,9 +12,9 @@ namespace ObserverPattern
         //A list holds the Observers (one subject to many observers); it is created in the constructor
         private List<IObserver> observers;
 
-        private float temperature;
-        private float humidity;
-        private float pressure;
+        private float Temperature;
+        private float Humidity;
+        private float Pressure;
 
         //Constructor, here the list of observers is created
         public WeatherData()
@@ -40,7 +40,7 @@ namespace ObserverPattern
         {
             foreach (IObserver observer in observers)
             {
-                observer.Update(temperature, humidity, pressure);
+                observer.Update(Temperature, Humidity, Pressure);
             }
         }
 
@@ -54,9 +54,9 @@ namespace ObserverPattern
         //Note the calling of MeasurementsChanged 
         public void SetMeasurements(float temperature, float humidity, float pressure)
         {
-            this.temperature = temperature;
-            this.humidity = humidity;
-            this.pressure = pressure;
+            Temperature = temperature;
+            Humidity = humidity;
+            Pressure = pressure;
             MeasurementsChanged();
         }
     }

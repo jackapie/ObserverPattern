@@ -11,29 +11,29 @@ namespace ObserverPattern
     //IDisplayElement is also required by all display elements
     public class CurrentConditionDisplay : IObserver, IDisplayElement 
     {
-        private float temperature;
-        private float humidity;
-        private ISubject weatherData;
+        private float Temperature;
+        private float Humidity;
+        private ISubject WeatherData;
 
-        //Constructor. This is passed the subject which is used to register the display as an observer
+        //Constructor. This is passed the subject (WeatherData) which is used to register the display as an observer
         public CurrentConditionDisplay(ISubject weatherData)
         {
-            this.weatherData = weatherData;
+            WeatherData = weatherData;
             weatherData.RegisterObserver(this);
         }
 
         //Save the temperature and humidity and call the display
         public void Update(float temperature, float humidity, float pressure)
         {
-            this.temperature = temperature;
-            this.humidity = humidity;
+            this.Temperature = temperature;
+            this.Humidity = humidity;
             Display();
         }
 
         public void Display()
         {
             //Print the most recent temperaature and humidity
-            Console.WriteLine("Current conditions: " + temperature + "F degrees and " + humidity + "% humidity");
+            Console.WriteLine("Current conditions: " + Temperature + "F degrees and " + Humidity + "% humidity");
            
         }
     }
