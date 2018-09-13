@@ -25,8 +25,8 @@ namespace ObserverPattern
         //Save the temperature and humidity and call the display
         public void Update(float temperature, float humidity, float pressure)
         {
-            this.Temperature = temperature;
-            this.Humidity = humidity;
+            Temperature = temperature;
+            Humidity = humidity;
             Display();
         }
 

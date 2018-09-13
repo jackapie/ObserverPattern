@@ -17,6 +17,8 @@ namespace ObserverPattern
             CurrentConditionDisplay currentDisplay = new CurrentConditionDisplay(weatherData);
             StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
             ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+            //Add the new heat index display
+            HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
             //Input data (from fictional weather station)
             weatherData.SetMeasurements(80, 65, 30.4f);
