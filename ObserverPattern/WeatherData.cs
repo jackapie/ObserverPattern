@@ -36,6 +36,10 @@ namespace ObserverPattern
 
         //Notifies all observers of the state of the Subject via the Update method all observers have
         //This is implemented via the next method, MeasurementsChanged()
+        //This pushes all the info to all the observers
+        //Downsides: 
+        //if a new type of data were included, IObserver and each individual observer would need the Update parameters changed accordingly 
+        //each observer gets all data types, whether they want it all or just specific parts
         public void NotifyObservers()
         {
             foreach (IObserver observer in observers)
