@@ -10,7 +10,7 @@ namespace DecoratorPattern
     {
         public HouseBlend()
         {
-            Description = "House Blend Coffee";
+            description = "House Blend Coffee";
         }
 
         public override double Cost()

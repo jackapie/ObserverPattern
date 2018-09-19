@@ -8,7 +8,6 @@ namespace DecoratorPattern
 {
     public class Whip : CondimentDecorator
     {
-        Beverage beverage;
 
         public Whip(Beverage beverage)
         {
@@ -20,9 +19,27 @@ namespace DecoratorPattern
             return beverage.GetDescription() + ", Whip";
         }
 
+        public override Size GetSize()
+        {
+            return beverage.GetSize();
+        }
         public override double Cost()
         {
-            return beverage.Cost() + .10;
+            double cost = beverage.Cost();
+            if (beverage.GetSize() == Size.TALL)
+            {
+                cost += .10;
+            }
+            if (beverage.GetSize() == Size.GRANDE)
+            {
+                cost += .15;
+            }
+            if (beverage.GetSize() == Size.VENTI)
+            {
+                cost += .20;
+            }
+
+            return cost;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace DecoratorPattern
     {
         public  Decaf()
         {
-            Description = "Decaf Coffee";
+            description = "Decaf Coffee";
         }
 
         public override double Cost()

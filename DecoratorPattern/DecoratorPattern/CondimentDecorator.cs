@@ -8,6 +8,13 @@ namespace DecoratorPattern
 {
     public abstract class CondimentDecorator : Beverage
     {
+        public Beverage beverage;
+
         public override abstract string GetDescription();
+
+        public abstract override Size GetSize();
+
+
+      
     }
 }

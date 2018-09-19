@@ -8,8 +8,7 @@ namespace DecoratorPattern
 {
     public class Mocha : CondimentDecorator
     {
-        Beverage beverage;
-
+        
         public Mocha(Beverage beverage)
         {
             this.beverage = beverage;
@@ -20,9 +19,27 @@ namespace DecoratorPattern
             return beverage.GetDescription() + ", Mocha";
         }
 
+        public override Size GetSize()
+        {
+            return beverage.GetSize();
+        }
         public override double Cost()
         {
-            return beverage.Cost() + .20;
+            double cost = beverage.Cost();
+            if(beverage.GetSize() == Size.TALL)
+            {
+                cost += .10;
+            }
+            if (beverage.GetSize() == Size.GRANDE)
+            {
+                cost += .15;
+            }
+            if (beverage.GetSize() == Size.VENTI)
+            {
+                cost += .20;
+            }
+
+            return cost;
         }
     }
 }

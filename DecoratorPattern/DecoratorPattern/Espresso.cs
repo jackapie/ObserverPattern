@@ -11,7 +11,7 @@ namespace DecoratorPattern
         public Espresso()
         {
 
-            Description = "Espresso";
+            description = "Espresso";
         }
 
         public override double Cost()
